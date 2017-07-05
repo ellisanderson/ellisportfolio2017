@@ -1,0 +1,42 @@
+header{
+  width:100%;
+  position:fixed;
+  z-index:2;
+}
+
+.logo{
+  text-transform:uppercase;
+  position:absolute;
+  left:25px;
+  top:25px;
+  line-height:1.3rem;
+
+  a{
+    letter-spacing:3px;
+    font-weight:900;
+    color:black;
+  }
+}
+
+.trigger{
+  text-transform:uppercase;
+  position:absolute;
+  right:25px;
+  top:25px;
+  z-index:2;
+  color:black;
+  cursor:pointer;
+  font-weight:900;
+}
+
+.underline{
+  margin-top:5px;
+  height:1px;
+  width:0%;
+  background-color:black;
+  transition: width .2s ease-in-out;
+}
+
+.logo:hover > .underline, .trigger:hover > .underline{
+  width: 100%;
+}

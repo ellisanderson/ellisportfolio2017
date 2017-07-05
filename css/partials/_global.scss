@@ -1,0 +1,18 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Lato',sans-serif;
+  letter-spacing: 1px;
+}
+
+a{
+  text-decoration:none;
+  color: $linkcolor;
+  transition:color .2s ease-in-out;
+}
+
+a:hover{
+  color: transparentize($linkcolor, .5);
+}
