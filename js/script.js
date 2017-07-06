@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$('#fullpage').fullpage({
 
     anchors:['0','1','2','3','4','5'],
-    sectionsColor : ['white', 'pink','slategrey','darkkhaki','teal','white'],
+    sectionsColor : ['white', 'pink','slategrey','darkkhaki','teal','beige'],
     loopHorizontal: false,
     showActiveTooltip: true,
 		slidesNavigation: true,
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 
 $(document).ready(function(){
-  $('.logo, .trigger').append('<div class="underline"><div/>');
+  $('.logo, .trigger').append('<div class="underline"></div>');
 });
 
 
@@ -40,4 +40,12 @@ $(document).ready(function(){
   $('.nav-background').click(function(){
     $(this).fadeOut();
   });
+});
+
+
+// WELCOME SQUIGGLE ANIMATION
+
+$(document).ready(function(){
+  var img = '<div class="image"></div>';
+  $('#welcome .fp-tableCell .background-animation').append(img.repeat(200));
 });
