@@ -5,6 +5,7 @@
 body{
   font-family: 'Lato',sans-serif;
   letter-spacing: 1px;
+  // overflow: hidden;
 }
 
 a{
@@ -15,4 +16,33 @@ a{
 
 a:hover{
   color: transparentize($linkcolor, .5);
+}
+
+section{
+  min-height: 100vh;
+}
+
+section:nth-of-type(n+2){
+  width: 400%;
+  display: flex;
+}
+
+#design{
+  background-color:pink;
+}
+
+#music{
+  background-color: slategrey;
+}
+
+#illustration{
+  background-color:darkkhaki;
+}
+
+#cv{
+  background-color:teal;
+}
+
+#contact{
+  background-color:beige;
 }

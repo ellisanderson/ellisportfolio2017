@@ -13,10 +13,33 @@ a {
 a:hover {
   color: rgba(0, 0, 0, 0.5); }
 
+section {
+  min-height: 100vh; }
+
+section:nth-of-type(n+2) {
+  width: 400%;
+  display: flex; }
+
+#design {
+  background-color: pink; }
+
+#music {
+  background-color: slategrey; }
+
+#illustration {
+  background-color: darkkhaki; }
+
+#cv {
+  background-color: teal; }
+
+#contact {
+  background-color: beige; }
+
 header {
   width: 100%;
   position: fixed;
-  z-index: 2; }
+  z-index: 2;
+  top: 0; }
 
 .logo {
   text-transform: uppercase;
@@ -82,36 +105,34 @@ nav {
     .main-nav li a {
       font-size: 3rem; } }
 #welcome {
-  background-color: #ff5544 !important; }
+  background-color: #e6511a !important;
+  height: 100vh; }
 
 .background-animation {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
-
-.image {
-  display: inline-block;
-  width: 25%;
-  padding-bottom: 25%;
-  background-image: url("../images/squiggle-animation2.gif");
-  mix-blend-mode: multiply;
+  height: 100%;
   opacity: .5;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: rotate(180deg) translateX(0vw); }
+  background-image: url("../images/squiggle-animation2.gif");
+  background-color: #e6511a;
+  background-blend-mode: multiply;
+  background-size: 40%;
+  transition: background-size .5s ease-in-out; }
 
 .logo-image {
   width: 100%;
   height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center; }
   .logo-image svg {
     fill: white;
+    stroke-width: 2;
     width: 150px;
     height: 150px;
     animation: appear 3s;
@@ -119,24 +140,35 @@ nav {
   .logo-image svg:hover {
     transform: scale(1.2); }
 
+@media (min-width: 414px) {
+  .background-animation {
+    background-size: 30%; } }
 @media (min-width: 767px) {
-  .image {
-    width: 20%;
-    padding-bottom: 20%; }
+  .background-animation {
+    background-size: 20%; }
 
   .logo-image svg {
     width: 300px;
     height: 300px; } }
 @media (min-width: 1200px) {
-  .image {
-    width: 16.666%;
-    padding-bottom: 16.666%; } }
+  .background-animation {
+    background-size: 15%; } }
 .slide {
-  text-align: center;
-  padding: 0 50px; }
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .slide:nth-child(n+2) {
   background-color: white; }
+
+.slide-text {
+  width: 100%; }
+
+.slide-images {
+  width: 100%;
+  background-color: black; }
 
 h1 {
   text-transform: uppercase;
