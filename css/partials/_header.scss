@@ -8,36 +8,66 @@ header{
 .logo{
   text-transform:uppercase;
   position:absolute;
-  left:25px;
-  top:25px;
-  line-height:1.3rem;
+  left:10px;
+  top:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  a{
-    letter-spacing:3px;
-    font-weight:900;
-    color:black;
+  .up{
+    display: none;
+    width: 30px;
+    height: 30px;
   }
 }
 
 .trigger{
   text-transform:uppercase;
   position:absolute;
-  right:25px;
-  top:25px;
+  right:5px;
+  top:5px;
   z-index:2;
   color:black;
   cursor:pointer;
   font-weight:900;
+  padding:10px;
+  display: none;
+}
+
+.ham-trigger{
+  position: absolute;
+  right: 10px;
+  top:5px;
+  cursor: pointer;
+  font-size: 1.7rem;
+  z-index: 2;
 }
 
 .underline{
   margin-top:5px;
-  height:3px;
+  height:1px;
   width:0%;
   background-color:black;
   transition: width .2s ease-in-out;
 }
 
-.logo:hover > .underline, .trigger:hover > .underline{
+.trigger:hover > .underline{
   width: 100%;
+}
+
+@media (min-width:767px) {
+  .trigger{
+    display: block;
+    top:25px;
+    right:25px;
+  }
+
+  .ham-trigger{
+    display: none;
+  }
+
+  .logo{
+    top:35px;
+    left:35px;
+  }
 }
