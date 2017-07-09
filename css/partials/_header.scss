@@ -30,17 +30,22 @@ header{
   color:black;
   cursor:pointer;
   font-weight:900;
-  padding:10px;
+  height: 30px;
+  padding-top:5px;
   display: none;
 }
 
 .ham-trigger{
   position: absolute;
   right: 10px;
-  top:5px;
+  top:10px;
   cursor: pointer;
-  font-size: 1.7rem;
+  font-size: 30px;
   z-index: 2;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 0;
 }
 
 .underline{
@@ -67,7 +72,7 @@ header{
   }
 
   .logo{
-    top:35px;
-    left:35px;
+    top:25px;
+    left:25px;
   }
 }

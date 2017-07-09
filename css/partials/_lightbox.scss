@@ -33,20 +33,23 @@
 
 #lightbox-close{
   position: absolute;
-  top:30px;
-  right:20px;
+  top:25px;
+  right:25px;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: black;
   @include flex;
   transition: $all-fade;
 }
 
 #lightbox-close:after {
-    content: "close";
-    font-weight: 400;
+    content: "X";
+    font-weight: 100;
     font-size: 1rem;
     text-transform: uppercase;
     line-height:0;
-    color: black;
+    color: white;
 }
 
 #lightbox-close:hover{
@@ -96,12 +99,5 @@
       width: auto;
       max-width: 100%;
     }
-  }
-}
-
-@media (min-width:767px) {
-  #lightbox-close{
-    top:40px;
-    right:30px;
   }
 }
