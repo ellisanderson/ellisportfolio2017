@@ -75,7 +75,9 @@ header {
   width: 100%;
   position: fixed;
   z-index: 2;
-  top: 0; }
+  top: 0;
+  height: 50px;
+  transition: background-color .5s ease-in-out; }
 
 .logo {
   text-transform: uppercase;
@@ -88,7 +90,8 @@ header {
   .logo .up {
     display: none;
     width: 30px;
-    height: 30px; }
+    height: 30px;
+    fill: white; }
 
 .trigger {
   text-transform: uppercase;
@@ -113,7 +116,8 @@ header {
   width: 30px;
   height: 30px;
   text-align: center;
-  line-height: 0; }
+  line-height: 0;
+  color: white; }
 
 .underline {
   margin-top: 5px;
@@ -126,6 +130,9 @@ header {
   width: 100%; }
 
 @media (min-width: 767px) {
+  header {
+    height: 0; }
+
   .trigger {
     display: block;
     top: 25px;
@@ -136,7 +143,9 @@ header {
 
   .logo {
     top: 25px;
-    left: 25px; } }
+    left: 25px; }
+    .logo .up {
+      fill: black; } }
 .nav-background {
   background: orange;
   width: 100%;
@@ -190,7 +199,7 @@ nav {
       font-size: 3rem;
       font-weight: 100; } }
 #welcome {
-  background-color: #e6511a !important;
+  background-color: #e6511a;
   height: 100vh; }
 
 .background-animation {
@@ -241,7 +250,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 12%;
+  padding: 100px 10%;
   flex-direction: column;
   position: relative; }
 
@@ -294,7 +303,7 @@ nav {
 
 @media (min-width: 767px) {
   .slide {
-    padding: 100px 12%; }
+    padding: 100px 15%; }
 
   .slide-nav li {
     font-size: 3rem;

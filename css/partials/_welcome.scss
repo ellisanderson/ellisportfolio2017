@@ -1,5 +1,5 @@
 #welcome{
-  background-color: desaturate($orange, 20%)!important;
+  background-color: $orange;
   height: 100vh;
 }
 
@@ -10,7 +10,7 @@
   height: 100%;
   opacity: .5;
   background-image: url('../images/squiggle-animation2.gif');
-  background-color:desaturate($orange, 20%);
+  background-color:$orange;
   background-blend-mode: multiply;
   background-size: 40%;
   transition: background-size .5s ease-in-out;

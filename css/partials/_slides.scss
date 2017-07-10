@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 12%;
+  padding: 100px 10%;
   flex-direction: column;
   position: relative;
 }
@@ -59,7 +59,6 @@
 .slide-text{
   width: 100%;
   line-height: 2rem;
-  // text-align: center;
 }
 
 .slide-images{
@@ -82,11 +81,10 @@
 
 
 @media (min-width:767px) {
-  .slide{
-    padding: 100px 12%;
-  }
-
-  .slide-nav{
+.slide{
+  padding:100px 15%;
+}
+.slide-nav{
     li{
       font-size: 3rem;
       font-weight: 100;

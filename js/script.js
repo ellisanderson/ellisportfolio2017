@@ -34,9 +34,11 @@ $(document).ready(function(){
   $('.lightbox-trigger').click(function(){
     event.preventDefault();
     var href = $(this).attr('href');
-    var alt = $(this).attr('alt');
+    // var alt = $(this).attr('alt');
     $('#lightbox').fadeIn();
-    $('#lightbox-content').html('<img src="' + href + '" />' + '<p>' + alt + '</p>');
+    $('#lightbox-content').html('<img src="' + href + '" />'
+    // + '<p>' + alt + '</p>'
+    );
     $("body").css("overflow","hidden");
   });
 
@@ -135,18 +137,15 @@ $(document).ready(function(){
 });
 
 
+// HEADER BACKGROUND-COLOR APPEAR ON SCROLL
+$(document).ready(function(){
+  var height = $(window).height();
 
-// SHOW HEADER BAR WHEN SLIDE IS VISIBLE
-// $(document).ready(function(){
-//   var top = $('.slide-content').offset().top;
-//   var bottom = $('.slide-content').offset().bottom;
-//   var test = '<div class="test"></div>';
-//
-//   $('body').append(test);
-//
-//   $(window).scroll(function() {
-//       if($(window).scrollTop() > top) { //scrolled past the other div?
-//         $(".test").fadeIn(500); //reached the desired point -- show div
-//       }
-//   });
-// });
+  $(window).scroll(function(){
+      if ($(this).scrollTop() >= height) {
+          $('header').css('background-color','black');
+      } else {
+          $('header').css('background-color','transparent');
+      }
+  });
+});
