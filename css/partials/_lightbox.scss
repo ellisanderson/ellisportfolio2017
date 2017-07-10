@@ -45,7 +45,7 @@
 
 #lightbox-close:after {
     content: "X";
-    font-weight: 100;
+    font-weight: 300;
     font-size: 1rem;
     text-transform: uppercase;
     line-height:0;
@@ -65,13 +65,31 @@
   flex-direction: column;
 
   p{
-    margin-top: 10px;
     color:black;
+    text-transform: capitalize;
   }
 }
 
+.lightbox-trigger{
+  display: block;
+  margin: 0 auto;
+  // width: 80%;
+  margin-bottom: 15%;
+}
+
+.lightbox-trigger:last-of-type{
+  margin:0 auto;
+}
+
 .lightbox-trigger img{
+  max-width: 100%;
+}
+
+.img-caption{
   width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: .8rem;
 }
 
 

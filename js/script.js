@@ -25,73 +25,6 @@ $(document).ready(function(){
 });
 
 
-// APPENDING STUFF
-$(document).ready(function(){
-  $('.trigger').append('<div class="underline"></div>');
-
-  //////////////////////////////////////////////////////////////
-
-  $('.slide-header').append('<p>(click me)</p>');
-
-  //////////////////////////////////////////////////////////////
-
-  var line = '<div class="line-spacing"><div class="line"></div></div>';
-  var lineBackground = '<div class="line-background"></div>'
-
-  $('#design .slide:first-of-type').append(lineBackground);
-  $('.line-background').append(line.repeat(200));
-
-});
-
-
-// MAIN NAVIGATION MODAL WINDOW
-$(document).ready(function(){
-  $('.trigger, .ham-trigger').click(function(){
-    $('.nav-background').fadeToggle();
-  });
-
-  $('.nav-background').click(function(){
-    $(this).fadeOut();
-  });
-});
-
-
-// SLIDE NAVIGATION
-$(document).ready(function(){
-  var close = '<div class="close">X</div>';
-  $('.slide-nav').append(close);
-
-  $('.slide-header').click(function(){
-    $(this).hide();
-    $(this).next().fadeIn();
-  });
-
-  $('.close').click(function(){
-    $(this).parent().hide();
-    $(this).parent().prev().fadeIn();
-  });
-
-  $('.slide-nav ul li a').click(function(){
-    $('.slide-nav').delay(500).hide(0);
-    $('.slide-header').delay(500).fadeIn();
-  });
-});
-
-// BACK TO TOP BUTTON APPEAR ON SCROLL
-(function($) {
-    $(document).ready(function(){
-        var height = $(window).height();
-
-        $(window).scroll(function(){
-            if ($(this).scrollTop() >= height) {
-                $('.up').fadeIn(500);
-            } else {
-                $('.up').fadeOut(500);
-            }
-        });
-    });
-})(jQuery);
-
 
 // // MY OWN LIGHTBOX
 $(document).ready(function(){
@@ -112,3 +45,108 @@ $(document).ready(function(){
     $("body").css("overflow","scroll");
   });
 });
+
+
+
+
+// APPENDING STUFF
+$(document).ready(function(){
+
+  // var close = '<div class="close">X</div>';
+  // $('.slide-nav').append(close);
+
+  //////////////////////////////////////////////////////////////
+
+  $('.trigger').append('<div class="underline"></div>');
+
+  //////////////////////////////////////////////////////////////
+
+  $('.slide-header').append('<p>(click me)</p>');
+
+  //////////////////////////////////////////////////////////////
+
+  var line = '<div class="line-spacing"><div class="line"></div></div>';
+  var lineBackground = '<div class="line-background"></div>'
+
+  $('#design .slide:first-of-type').append(lineBackground);
+  $('.line-background').append(line.repeat(200));
+
+  //////////////////////////////////////////////////////////////
+
+
+
+  // DISPLAY IMAGE CAPTION
+  $(".lightbox-trigger img").each(function(){
+    var imageCaption = $(this).attr("alt");
+    if (imageCaption != '') {
+        $("<p class='img-caption'><em>" + imageCaption + "</em></p>").insertAfter(this);
+    }
+  });
+
+});
+
+
+
+// MAIN NAVIGATION MODAL WINDOW
+$(document).ready(function(){
+  $('.trigger, .ham-trigger').click(function(){
+    $('.nav-background').fadeToggle();
+  });
+
+  $('.nav-background').click(function(){
+    $(this).fadeOut();
+  });
+});
+
+
+
+// SLIDE NAVIGATION
+$(document).ready(function(){
+
+  $('.slide-header').click(function(){
+    $(this).hide();
+    $(this).next().fadeIn();
+  });
+
+  $('.close').click(function(){
+    $(this).parent().hide();
+    $(this).parent().prev().fadeIn();
+  });
+
+  $('.slide-nav ul li a').click(function(){
+    $('.slide-nav').delay(500).hide(0);
+    $('.slide-header').delay(500).fadeIn();
+  });
+});
+
+
+
+// BACK TO TOP BUTTON APPEAR ON SCROLL
+$(document).ready(function(){
+    var height = $(window).height();
+
+    $(window).scroll(function(){
+        if ($(this).scrollTop() >= height) {
+            $('.up').fadeIn(500);
+        } else {
+            $('.up').fadeOut(500);
+        }
+    });
+});
+
+
+
+// SHOW HEADER BAR WHEN SLIDE IS VISIBLE
+// $(document).ready(function(){
+//   var top = $('.slide-content').offset().top;
+//   var bottom = $('.slide-content').offset().bottom;
+//   var test = '<div class="test"></div>';
+//
+//   $('body').append(test);
+//
+//   $(window).scroll(function() {
+//       if($(window).scrollTop() > top) { //scrolled past the other div?
+//         $(".test").fadeIn(500); //reached the desired point -- show div
+//       }
+//   });
+// });
