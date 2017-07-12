@@ -75,7 +75,11 @@ $(document).ready(function(){
 
   //////////////////////////////////////////////////////////////
 
-
+  // var circle = '<div class="circle-spacing"><div class="circle"></div></div>';
+  // var circleBackground = '<div class="circle-background"></div>'
+  //
+  // $('#contact .slide:first-of-type').append(circleBackground);
+  // $('.circle-background').append(circle.repeat(200));
 
   // DISPLAY IMAGE CAPTION
   $(".lightbox-trigger img").each(function(){

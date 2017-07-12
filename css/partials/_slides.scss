@@ -6,6 +6,7 @@
   padding: 100px 10%;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 
 .slide:nth-child(n+2){
@@ -53,7 +54,7 @@
 
 .slide-content{
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1024px;
 }
 
 .slide-text{
@@ -62,7 +63,7 @@
 }
 
 .slide-images{
-  margin-top: 80px;
+  margin-top: 145px;
 }
 
 
@@ -101,7 +102,7 @@
 
   .slide-text{
     width: 66.666%;
-    padding-right:80px;
+    padding-right: 10%;
     text-align: justify;
   }
 
