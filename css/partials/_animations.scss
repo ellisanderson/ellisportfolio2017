@@ -63,6 +63,32 @@
   }
 }
 
+@keyframes spin2 {
+  0%{
+    transform: rotate(0);
+  }
+
+  10%{
+    transform: rotate(0);
+  }
+
+  40%{
+    transform: rotate(180deg);
+  }
+
+  60%{
+    transform: rotate(180deg);
+  }
+
+  90%{
+    transform: rotate(0);
+  }
+
+  100%{
+    transform: rotate(0);
+  }
+}
+
 
 // LINES
 .line-background{
@@ -90,43 +116,35 @@
   animation: spin 7s infinite ease-in-out;
 }
 
+.shape-background{
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: -50%;
+  left:-50%;
+  transform: rotate(45deg);
+  @include flex;
+  mix-blend-mode: overlay;
+}
+
+.shape{
+  margin: 5%;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right:20px solid red;
+  animation: spin2 10s infinite ease;
+}
+
+
+
 @media (min-width:767px) {
   .line{
     width: 2px;
   }
-}
 
-// TRIANGLES
-// .circle-background{
-//   width: 200%;
-//   height: 200%;
-//   position: absolute;
-//   top: -50%;
-//   left:-50%;
-//   transform: rotate(45deg);
-//   // animation: fall 5s infinite linear;
-//   // @include flex;
-//   display: flex;
-//   flex-wrap:wrap;
-// }
-//
-// .circle-spacing{
-//   width: 5%;
-//   padding-bottom: 5%;
-//   // display: flex;
-//   // background-color: blue;
-//   // margin: 50px;
-//   position: relative;
-//   transform: rotate(45deg);
-//   // animation: fall 3s infinite linear;
-// }
-//
-// .circle{
-//   position: absolute;
-//   top:calc(25%);
-//   left:calc(25%);
-//   width: 50%;
-//   height: 50%;
-//   background-color:royalblue;
-//   // animation: fall 2s infinite;
-// }
+  .shape{
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right:40px solid red;
+  }
+}

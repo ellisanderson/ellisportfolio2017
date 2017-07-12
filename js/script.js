@@ -81,6 +81,12 @@ $(document).ready(function(){
   // $('#contact .slide:first-of-type').append(circleBackground);
   // $('.circle-background').append(circle.repeat(200));
 
+  var shape = '<div class="shape"></div>';
+  var shapeBackground = '<div class="shape-background"></div>';
+
+  $('#contact .slide:first-of-type').append(shapeBackground);
+  $('.shape-background').append(shape.repeat(100));
+
   // DISPLAY IMAGE CAPTION
   $(".lightbox-trigger img").each(function(){
     var imageCaption = $(this).attr("alt");
