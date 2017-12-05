@@ -51,6 +51,7 @@ $(document).ready(function(){
 
 
 
+
 // APPENDING STUFF
 $(document).ready(function(){
 
@@ -63,29 +64,28 @@ $(document).ready(function(){
 
   //////////////////////////////////////////////////////////////
 
-  $('.slide-header').append('<p>(click me)</p>');
+  // $('.slide-header').append('<p>(click me)</p>');
 
   //////////////////////////////////////////////////////////////
 
-  var line = '<div class="line-spacing"><div class="line"></div></div>';
-  var lineBackground = '<div class="line-background"></div>'
-
-  $('#design .slide:first-of-type').append(lineBackground);
-  $('.line-background').append(line.repeat(200));
-
-  //////////////////////////////////////////////////////////////
-
-  // var circle = '<div class="circle-spacing"><div class="circle"></div></div>';
-  // var circleBackground = '<div class="circle-background"></div>'
+  // var line = '<div class="line-spacing"><div class="line"></div></div>';
+  // var lineBackground = '<div class="line-background"></div>'
   //
-  // $('#contact .slide:first-of-type').append(circleBackground);
-  // $('.circle-background').append(circle.repeat(200));
+  // $('#design .slide:first-of-type').append(lineBackground);
+  // $('.line-background').append(line.repeat(200));
+
+  //////////////////////////////////////////////////////////////
 
   var shape = '<div class="shape"></div>';
   var shapeBackground = '<div class="shape-background"></div>';
 
   $('#contact .slide:first-of-type').append(shapeBackground);
   $('.shape-background').append(shape.repeat(100));
+
+
+
+
+
 
   // DISPLAY IMAGE CAPTION
   $(".lightbox-trigger img").each(function(){
@@ -108,7 +108,14 @@ $(document).ready(function(){
   $('.nav-background').click(function(){
     $(this).fadeOut();
   });
+
+  $('.logo, .main-nav li a').click(function(){
+    $('.project').hide();
+    $("body").css("overflow","scroll");
+  });
 });
+
+
 
 
 
@@ -118,11 +125,13 @@ $(document).ready(function(){
   $('.slide-header').click(function(){
     $(this).hide();
     $(this).next().fadeIn();
+    $(this).parent().parent().children().show(); //Reveal the section's content
   });
 
-  $('.close').click(function(){
-    $(this).parent().hide();
+  $('.back').click(function(){
+    $(this).parent().fadeOut();
     $(this).parent().prev().fadeIn();
+    $("body").css("overflow","scroll");
   });
 
   $('.slide-nav ul li a').click(function(){
@@ -130,6 +139,8 @@ $(document).ready(function(){
     $('.slide-header').delay(500).fadeIn();
   });
 });
+
+
 
 
 
@@ -147,6 +158,9 @@ $(document).ready(function(){
 });
 
 
+
+
+
 // HEADER BACKGROUND-COLOR APPEAR ON SCROLL
 $(document).ready(function(){
   var height = $(window).height();
@@ -157,5 +171,32 @@ $(document).ready(function(){
       } else {
           $('header').css('background-color','transparent');
       }
+  });
+});
+
+
+//PROJECT MODAL POPUP (ALSO FREEZES SCROLLING WHEN PROJECT IS VISIBLE)
+$(document).ready(function(){
+  $('.item').click(function(){
+    $(this).next().fadeIn();
+    $('body').css("overflow", "hidden");
+  });
+});
+
+//HIDE LOGO WHEN PROJECT MODAL APPEARS, APPEARS AGAIN WHEN RETURNING TO HOME SCREEN
+$(document).ready(function(){
+  $('.item').click(function(){
+    $('.logo').css('opacity','0');
+  });
+
+  $('.main-nav li a, .back').click(function(){
+    $('.logo').css('opacity','1');
+  });
+});
+
+//RETURN TO TOP OF PROJECT WHEN CLICKING on Project
+$(document).ready(function(){
+  $('.item').click(function(){
+    $(this).next().scrollTop(0);
   });
 });

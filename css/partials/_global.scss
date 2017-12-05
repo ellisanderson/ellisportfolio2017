@@ -24,12 +24,27 @@ h1:hover{
 }
 
 h2{
+  font-weight: 900;
+  // font-size: 1rem;
+  color: red;
   text-transform: uppercase;
-  font-size: 1.5rem;
+}
+
+h3{
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h4{
+  font-weight: 300;
+  padding:0;
+  margin: 0;
 }
 
 p{
   margin-bottom: 30px;
+  // text-align: justify;
+  line-height: 2rem;
 
   a{
     font-weight: 900;
@@ -47,37 +62,12 @@ a:hover{
   opacity: .5;
 }
 
-#design{
-  background-color:pink;
-}
-
-#music{
-  background-color: slategrey;
-}
-
-#illustration{
-  background-color:darkkhaki;
-}
-
-#cv{
-  background-color:teal;
-}
-
-#contact{
-  background-color: darkgrey;
+hr{
+  margin: 100px 0;
 }
 
 
-.test{
-  width: 100%;
-  height: 50px;
-  background-color: red;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: none;
-}
+
 
 
 
@@ -93,7 +83,7 @@ a:hover{
   }
 
   h2{
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 

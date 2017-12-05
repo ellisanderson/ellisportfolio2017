@@ -1,0 +1,81 @@
+.project-grid{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.project-grid::after{
+  content: "";
+  flex:auto;
+}
+
+.item{
+  width: 100%;
+  border: 15px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  img{
+    width: 100%;
+    z-index: 1;
+    transition: opacity .3s ease-in-out;
+  }
+
+  h3{
+    color:white;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    // z-index: 1;
+  }
+}
+
+.item:hover img{
+  opacity:0;
+}
+
+
+
+
+//////////////////// Specific Colors //////////////////////////
+
+#mapped-item{
+  background-color: #e22;
+}
+
+#located-item{
+  background-color: black;
+}
+
+#landed-item{
+  background-color: #ffff00;
+    h3{
+      color: black;
+    }
+}
+
+#settled-item{
+  background-color: #1077DD;
+}
+
+
+
+
+//////////////////// Media Queries //////////////////////////
+
+@media (min-width:767px) {
+  .item{
+    width:50%;
+  }
+}
+
+@media (min-width:1024px) {
+  .item{
+    width:25%;
+  }
+}

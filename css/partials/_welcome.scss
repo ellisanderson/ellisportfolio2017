@@ -27,6 +27,10 @@
   align-items: center;
   justify-content: center;
 
+  a:hover{
+    opacity: 1;
+  }
+
   svg{
     fill:white;
     stroke-width:2;
@@ -34,6 +38,10 @@
     height: 150px;
     animation: appear 3s;
     transition: $all-fade;
+  }
+
+  svg:hover{
+    fill:black;
   }
 }
 

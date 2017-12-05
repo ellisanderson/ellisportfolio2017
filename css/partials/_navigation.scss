@@ -1,5 +1,5 @@
 .nav-background{
-  background:orange;
+  background:black;
   width:100%;
   height:100vh;
   display:none;
@@ -28,6 +28,7 @@ nav{
       font-size: 1.5rem;
       font-weight: 300;
       transition: $all-fade;
+      color: white;
     }
   }
 }
@@ -35,25 +36,30 @@ nav{
 
 
 
-.close{
-  top:0;
-  width: 50px;
+.back{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
   height: 50px;
-  border-radius: 50%;
-  margin: 25px auto;
+  padding:15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 0;
-  font-weight: 100;
-  font-size: 2rem;
-  color: black;
+  color: white;
+  background-color: black;
+  z-index: 4;
   cursor: pointer;
-  transition: $color-fade;
 }
 
-.close:hover{
-  color:$linkhover;
+.arrow{
+  display: none;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  transition: border .3s ease-in-out;
+  animation: backandforth 1s infinite ease-in-out;
 }
 
 
@@ -68,5 +74,29 @@ nav{
         font-weight: 100;
       }
     }
+  }
+
+  .back{
+    width: 80px;
+    height: 100vh;
+    background-color: #eee;
+    transition: background-color .3s ease-in-out;
+  }
+
+  .back:hover{
+    background-color: black;
+  }
+
+  .back:hover .arrow{
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+  }
+
+  .return{
+    display: none;
+  }
+
+  .arrow{
+    display: block;
   }
 }

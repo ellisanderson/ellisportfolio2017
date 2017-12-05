@@ -1,16 +1,16 @@
 .slide{
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 100px 10%;
+  padding: 100px 0;
   flex-direction: column;
   position: relative;
   overflow: hidden;
 }
 
 .slide:nth-child(n+2){
-  background-color: white;
+  // background-color: white;
+  display: none;
 }
 
 .slide-header{
@@ -64,6 +64,13 @@
 
 .slide-images{
   margin-top: 145px;
+}
+
+.slide-headline{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 15px;
 }
 
 
