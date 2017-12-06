@@ -200,3 +200,10 @@ $(document).ready(function(){
     $(this).next().scrollTop(0);
   });
 });
+
+//RETURN TO #NCSTATE WHEN CLICKING BACK FROM A Project
+$(document).ready(function(){
+  $('.back').click(function(){
+    $('#ncstate').scrollTop(0);
+  });
+});
