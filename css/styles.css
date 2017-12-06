@@ -34,7 +34,7 @@ h4 {
   margin: 0; }
 
 p {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   line-height: 2rem; }
   p a {
     font-weight: 900;
@@ -56,9 +56,11 @@ figure {
   margin: 0; }
 
 figcaption {
-  margin: 0px 0 100px;
+  margin: 0px auto 100px;
   text-align: center;
-  color: #777; }
+  color: #777;
+  font-size: .8rem;
+  max-width: 500px; }
 
 @media (min-width: 767px) {
   h1 {
