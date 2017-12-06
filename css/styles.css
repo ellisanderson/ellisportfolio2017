@@ -33,6 +33,11 @@ h4 {
   padding: 0;
   margin: 0; }
 
+h5 {
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center; }
+
 p {
   margin-bottom: 50px;
   line-height: 2rem; }
@@ -628,7 +633,8 @@ nav {
   margin: 0 auto; }
   .project-content img {
     width: 100%;
-    margin-bottom: 15px; }
+    display: block;
+    margin: 0 auto 15px; }
 
 .image-grid {
   display: flex;
