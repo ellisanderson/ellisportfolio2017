@@ -2,6 +2,8 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  max-width: 537px;
+  margin:0 auto;
 }
 
 .project-grid::after{
@@ -20,7 +22,6 @@
 
   img{
     width: 100%;
-    z-index: 1;
     transition: opacity .3s ease-in-out;
   }
 
@@ -31,12 +32,17 @@
     top:50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    // z-index: 1;
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
   }
 }
 
 .item:hover img{
   opacity:0;
+}
+
+.item:hover h3{
+  opacity: 1;
 }
 
 
@@ -69,6 +75,10 @@
 //////////////////// Media Queries //////////////////////////
 
 @media (min-width:767px) {
+  .project-grid{
+    max-width: 100%;
+  }
+
   .item{
     width:50%;
   }

@@ -102,11 +102,11 @@ $(document).ready(function(){
 // MAIN NAVIGATION MODAL WINDOW
 $(document).ready(function(){
   $('.trigger, .ham-trigger').click(function(){
-    $('.nav-background').fadeToggle();
+    $('.nav-background').fadeToggle(); //opens up nav modal
   });
 
-  $('.nav-background').click(function(){
-    $(this).fadeOut();
+  $('.nav-close, .main-nav li a').click(function(){
+    $('.nav-background').fadeOut();
   });
 
   $('.logo, .main-nav li a').click(function(){
@@ -150,9 +150,9 @@ $(document).ready(function(){
 
     $(window).scroll(function(){
         if ($(this).scrollTop() >= height) {
-            $('.up').fadeIn(500);
+            $('.up').fadeIn(300);
         } else {
-            $('.up').fadeOut(500);
+            $('.up').fadeOut(300);
         }
     });
 });
@@ -183,17 +183,6 @@ $(document).ready(function(){
   });
 });
 
-//HIDE LOGO WHEN PROJECT MODAL APPEARS, APPEARS AGAIN WHEN RETURNING TO HOME SCREEN
-$(document).ready(function(){
-  $('.item').click(function(){
-    $('.logo').css('opacity','0');
-  });
-
-  $('.main-nav li a, .back').click(function(){
-    $('.logo').css('opacity','1');
-  });
-});
-
 //RETURN TO TOP OF PROJECT WHEN CLICKING on Project
 $(document).ready(function(){
   $('.item').click(function(){
@@ -205,5 +194,24 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.back').click(function(){
     $('#ncstate').scrollTop(0);
+  });
+});
+
+
+//HIDE LOGO WHEN PROJECT MODAL APPEARS, APPEARS AGAIN WHEN RETURNING TO HOME SCREEN
+$(document).ready(function(){
+  $('.item').click(function(){
+    $('.return').fadeIn();
+    $('.logo').fadeOut();
+  });
+
+  $('.main-nav li a, .back, .return').click(function(){
+    $('.logo').fadeIn();
+  });
+
+  $('.return').click(function(){
+    $(this).fadeOut();
+    $('.project').fadeOut();
+    $('body').css('overflow','scroll');
   });
 });

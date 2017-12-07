@@ -6,15 +6,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  padding: 50px 15px;
+  padding: 10vh 15px 0vh;
   background-color: white;
-  z-index: 2;
+  z-index: 1;
   overflow-y: scroll;
-
 }
 
 .project-content{
-  max-width: calc(767px + 30%);
+  max-width: 507px;
   margin: 0 auto;
 
   img{
@@ -60,7 +59,9 @@
 
 
 @media (min-width:767px) {
+
   .project-content{
+    max-width: calc(767px + 30%);
     padding: 0 15%;
 
     h2, h3{

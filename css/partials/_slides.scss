@@ -9,7 +9,6 @@
 }
 
 .slide:nth-child(n+2){
-  // background-color: white;
   display: none;
 }
 
@@ -71,6 +70,9 @@
   align-items: baseline;
   justify-content: space-between;
   padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 537px;
 }
 
 
@@ -89,14 +91,18 @@
 
 
 @media (min-width:767px) {
-.slide{
-  padding:100px 15%;
-}
-.slide-nav{
-    li{
-      font-size: 3rem;
-      font-weight: 100;
+  .slide{
+    padding:100px 15%;
+  }
+  .slide-nav{
+      li{
+        font-size: 3rem;
+        font-weight: 100;
+      }
     }
+
+  .slide-headline{
+    max-width: 100%;
   }
 }
 
