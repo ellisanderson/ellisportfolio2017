@@ -179,21 +179,21 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.item').click(function(){
     $(this).next().fadeIn();
+    $(this).next().scrollTop(0); //RETURN TO TOP OF PROJECT WHEN CLICKING on Project
     $('body').css("overflow", "hidden");
-  });
-});
 
-//RETURN TO TOP OF PROJECT WHEN CLICKING on Project
-$(document).ready(function(){
-  $('.item').click(function(){
-    $(this).next().scrollTop(0);
-  });
-});
+    var fixed = document.querySelector('body');
 
-//RETURN TO #NCSTATE WHEN CLICKING BACK FROM A Project
-$(document).ready(function(){
-  $('.back').click(function(){
-    $('#ncstate').scrollTop(0);
+    fixed.addEventListener('touchmove', function(e) {
+
+            e.preventDefault();
+
+    }, false);
+
+    // document.ontouchmove = function (e) {
+    //   e.preventDefault();
+    // };
+
   });
 });
 
