@@ -684,7 +684,7 @@ nav {
   padding: 10vh 15px 0vh;
   background-color: white;
   z-index: 1;
-  overflow: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch; }
 
 .project-content {
