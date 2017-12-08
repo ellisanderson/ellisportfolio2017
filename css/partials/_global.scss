@@ -11,6 +11,11 @@ body{
   letter-spacing: 1px;
 }
 
+section{
+  height: 100%;
+  overflow: auto;
+}
+
 h1{
   text-transform: uppercase;
   margin: 0;

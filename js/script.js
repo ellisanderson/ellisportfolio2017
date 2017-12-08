@@ -182,7 +182,7 @@ $(document).ready(function(){
     $('.logo').fadeOut(); //HIDE LOGO WHEN PROJECT MODAL APPEARS
     $(this).next().fadeIn(); //PROJECT MODAL POPUP
     $(this).next().scrollTop(0); //RETURN TO TOP OF PROJECT WHEN CLICKING on Project
-    $('body, section').addClass('scroll-disable'); //FREEZE BODY SCROLLING WHILE PROJECT MODAL IS UP
+    $('body').addClass('scroll-disable'); //FREEZE BODY SCROLLING WHILE PROJECT MODAL IS UP
 
     // $('body').on('touchmove', function(e){
     //   if($('.scroll-disable').has($(e.target)).length) e.preventDefault();
@@ -192,7 +192,7 @@ $(document).ready(function(){
 
   $('.main-nav li a, .return').click(function(){
     $('.logo').fadeIn(); // APPEARS AGAIN WHEN RETURNING TO HOME SCREEN
-    $('body, section').removeClass('scroll-disable'); // ALLOW BODY SCROLLING AGAIN WHEN MODAL DISAPPEARS
+    $('body').removeClass('scroll-disable'); // ALLOW BODY SCROLLING AGAIN WHEN MODAL DISAPPEARS
   });
 
   $('.return').click(function(){
