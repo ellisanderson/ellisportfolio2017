@@ -183,12 +183,6 @@ $(document).ready(function(){
     $(this).next().scrollTop(0); //RETURN TO TOP OF PROJECT WHEN CLICKING on Project
     $('body').addClass('noscroll'); //FREEZE BODY SCROLLING WHILE PROJECT MODAL IS UP
 
-    if ($('section')) {
-      document.ontouchmove = function(e){ e.preventDefault(); }
-    } else if ($('.project')) {
-      document.ontouchmove = function(e){ return true; }
-    }
-
   });
 
   $('.main-nav li a, .return').click(function(){
