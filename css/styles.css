@@ -8,6 +8,9 @@ body {
   font-family: 'Lato',sans-serif;
   letter-spacing: 1px; }
 
+section {
+  position: relative; }
+
 h1 {
   text-transform: uppercase;
   margin: 0;
@@ -75,6 +78,18 @@ figcaption {
   position: static;
   overflow: hidden; }
 
+#appear {
+  position: absolute;
+  top: 1px; }
+
+#disappear {
+  position: absolute;
+  top: 25%; }
+
+#double-check-appear {
+  position: absolute;
+  bottom: 0; }
+
 @media (min-width: 767px) {
   h1 {
     font-weight: 100;
@@ -91,10 +106,10 @@ header {
   width: 100%;
   position: fixed;
   z-index: 2;
-  top: 0;
-  right: 0px;
+  bottom: 0;
+  right: 0;
   height: 50px;
-  transition: background-color .5s ease-in-out; }
+  background-color: black; }
 
 .logo {
   position: absolute;
@@ -123,7 +138,7 @@ header {
 
 .ham-trigger {
   position: absolute;
-  right: 10px;
+  right: calc(50% - 15px);
   top: 10px;
   cursor: pointer;
   font-size: 30px;
@@ -151,7 +166,8 @@ header {
 
 @media (min-width: 767px) {
   header {
-    height: 0; }
+    top: 0;
+    background-color: transparent; }
 
   .trigger {
     display: block;
@@ -171,12 +187,13 @@ header {
   width: 100%;
   height: 100vh;
   display: none;
-  position: absolute; }
+  position: fixed;
+  top: 0; }
 
 .nav-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 10px;
+  right: calc(50% - 15px);
   width: 30px;
   height: 30px;
   cursor: pointer; }
@@ -681,7 +698,7 @@ nav {
   top: 0;
   left: 0;
   bottom: 0;
-  padding: 10vh 15px 0vh;
+  padding: 30px 15px 0;
   background-color: white;
   z-index: 1;
   overflow-y: scroll;
@@ -727,6 +744,9 @@ nav {
   transform: scale(0.1); }
 
 @media (min-width: 767px) {
+  .project {
+    padding-top: 5vh; }
+
   .project-content {
     max-width: calc(767px + 30%);
     padding: 0 15%; }

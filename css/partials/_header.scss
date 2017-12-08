@@ -2,15 +2,13 @@ header{
   width:100%;
   position:fixed;
   z-index:2;
-  top: 0;
-  right: 0px;
+  bottom: 0;
+  right: 0;
   height: 50px;
-  transition: background-color .5s ease-in-out;
-  // background-color: black;
+  background-color: black;
 }
 
 .logo{
-  // text-transform:uppercase;
   position:absolute;
   left:10px;
   top:10px;
@@ -44,7 +42,7 @@ header{
 
 .ham-trigger{
   position: absolute;
-  right: 10px;
+  right: calc(50% - 15px);
   top:10px;
   cursor: pointer;
   font-size: 30px;
@@ -83,7 +81,9 @@ header{
 
 @media (min-width:767px) {
   header{
-    height: 0;
+    // height: 0;
+    top: 0;
+    background-color: transparent;
   }
 
   .trigger{

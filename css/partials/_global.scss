@@ -11,10 +11,9 @@ body{
   letter-spacing: 1px;
 }
 
-// section{
-//   height: 100%;
-//   overflow: auto;
-// }
+section{
+  position: relative;
+}
 
 h1{
   text-transform: uppercase;
@@ -98,6 +97,20 @@ figcaption{
   overflow: hidden;
 }
 
+#appear{
+  position: absolute;
+  top: 1px;
+}
+
+#disappear{
+  position: absolute;
+  top:25%;
+}
+
+#double-check-appear{
+  position: absolute;
+  bottom:0;
+}
 
 
 

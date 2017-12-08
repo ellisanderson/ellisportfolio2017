@@ -139,48 +139,75 @@ $(document).ready(function(){
 
 
 
-// BACK TO TOP BUTTON APPEAR ON SCROLL
-$(document).ready(function(){
-    var height = $(window).height();
+// Checking to see if something is visible on screen
+$.fn.isVisible = function() {
+    // Current distance from the top of the page
+    var windowScrollTopView = $(window).scrollTop();
 
-    $(window).scroll(function(){
-        if ($(this).scrollTop() >= height) {
-            $('.up').fadeIn(300);
-        } else {
-            $('.up').fadeOut(300);
-        }
-    });
-});
+    // Current distance from the top of the page, plus the height of the window
+    var windowBottomView = windowScrollTopView + $(window).height();
+
+    // Element distance from top
+    var elemTop = $(this).offset().top;
+
+    // Element distance from top, plus the height of the element
+    var elemBottom = elemTop + $(this).height();
+
+    return ((elemBottom <= windowBottomView) && (elemTop >= windowScrollTopView));
+}
+
+//
+// $(document).ready(function() {
+//   var appear = "<div id='appear'></div>";
+//   // var disappear = "<div id='disappear'></div>";
+//   // var triggers = appear + disappear;
+//   // var doublecheck = "<div id='double-check-appear'></div>";
+//
+//   $('section:nth-of-type(2) .slide:first-of-type').append(appear);
+//   // $('section:not(:first) .slide').append(doublecheck);
+//
+//   // if($('section:nth-of-type(2)').isVisible()) {
+//   //   $('.up').css('display','block');
+//   // };
+//
+//   $(window).scroll(function() {
+//       if($('#welcome').isVisible()) {
+//         $('.up').fadeOut();
+//       } else if($('#appear').isVisible()) {
+//         $('.up').fadeIn();
+//       };
+//   });
+// });
 
 
 
 
 
 // HEADER BACKGROUND-COLOR APPEAR ON SCROLL
-$(document).ready(function(){
-  var height = $(window).height();
-
-  $(window).scroll(function(){
-      if ($(this).scrollTop() >= height) {
-          $('header').css('background-color','black');
-      } else {
-          $('header').css('background-color','transparent');
-      }
-  });
-});
+// $(document).ready(function(){
+//   var height = $(window).height();
+//
+//   $(window).scroll(function(){
+//       if ($(this).scrollTop() >= height) {
+//           $('header').css('background-color','black');
+//       } else {
+//           $('header').css('background-color','transparent');
+//       }
+//   });
+// });
 
 
 $(document).ready(function(){
   $('.item').click(function(){
-    $('.return').fadeIn(); // WHEN PROJECT MODAL APPEARS, BACK BUTTON APPEARS
-    $('.logo').fadeOut(); //HIDE LOGO WHEN PROJECT MODAL APPEARS
+    // $(this).parent().parent().parent().siblings().not('header').hide(); //hide everything except 'header' or this section
+    // $(this).siblings().fadeOut(); // HIDE ALL SIBLINGS IN THE .project-grid, EXCEPT THE NEXT ONE WHICH WILL APPEAR USING THE NEXT LINE OF CODE
     $(this).next().fadeIn(); //PROJECT MODAL POPUP
     $(this).next().scrollTop(0); //RETURN TO TOP OF PROJECT WHEN CLICKING on Project
+
+    $('.return').fadeIn(); // WHEN PROJECT MODAL APPEARS, BACK BUTTON APPEARS
+    $('.logo').fadeOut(); //HIDE LOGO WHEN PROJECT MODAL APPEARS
     $('body').addClass('scroll-disable'); //FREEZE BODY SCROLLING WHILE PROJECT MODAL IS UP
 
-    // $('body').on('touchmove', function(e){
-    //   if($('.scroll-disable').has($(e.target)).length) e.preventDefault();
-    // });
 
   });
 
@@ -195,44 +222,3 @@ $(document).ready(function(){
   });
 
 });
-
-
-
-
-(function () {
-    var _overlay = document.querySelector('.project');
-    var _clientY = null; // remember Y position on touch start
-
-    _overlay.addEventListener('touchstart', function (event) {
-        if (event.targetTouches.length === 1) {
-            // detect single touch
-            _clientY = event.targetTouches[0].clientY;
-        }
-    }, false);
-
-    _overlay.addEventListener('touchmove', function (event) {
-        if (event.targetTouches.length === 1) {
-            // detect single touch
-            disableRubberBand(event);
-        }
-    }, false);
-
-    function disableRubberBand(event) {
-        var clientY = event.targetTouches[0].clientY - _clientY;
-
-        if (_overlay.scrollTop === 0 && clientY > 0) {
-            // element is at the top of its scroll
-            event.preventDefault();
-        }
-
-        if (isOverlayTotallyScrolled() && clientY < 0) {
-            //element is at the top of its scroll
-            event.preventDefault();
-        }
-    }
-
-    function isOverlayTotallyScrolled() {
-        // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight#Problems_and_solutions
-        return _overlay.scrollHeight - _overlay.scrollTop <= _overlay.clientHeight;
-    }
-}())

@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   bottom:0;
-  padding: 10vh 15px 0vh;
+  padding: 30px 15px 0;
   background-color: white;
   z-index: 1;
   overflow-y: scroll;
@@ -60,6 +60,10 @@
 
 
 @media (min-width:767px) {
+
+  .project{
+    padding-top:5vh;
+  }
 
   .project-content{
     max-width: calc(767px + 30%);
