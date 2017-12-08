@@ -145,34 +145,34 @@ $(document).ready(function(){
 
 
 // BACK TO TOP BUTTON APPEAR ON SCROLL
-// $(document).ready(function(){
-//     var height = $(window).height();
-//
-//     $(window).scroll(function(){
-//         if ($(this).scrollTop() >= height) {
-//             $('.up').fadeIn(300);
-//         } else {
-//             $('.up').fadeOut(300);
-//         }
-//     });
-// });
+$(document).ready(function(){
+    var height = $(window).height();
+
+    $(window).scroll(function(){
+        if ($(this).scrollTop() >= height) {
+            $('.up').fadeIn(300);
+        } else {
+            $('.up').fadeOut(300);
+        }
+    });
+});
 
 
 
 
 
 // HEADER BACKGROUND-COLOR APPEAR ON SCROLL
-// $(document).ready(function(){
-//   var height = $(window).height();
-//
-//   $(window).scroll(function(){
-//       if ($(this).scrollTop() >= height) {
-//           $('header').css('background-color','black');
-//       } else {
-//           $('header').css('background-color','transparent');
-//       }
-//   });
-// });
+$(document).ready(function(){
+  var height = $(window).height();
+
+  $(window).scroll(function(){
+      if ($(this).scrollTop() >= height) {
+          $('header').css('background-color','black');
+      } else {
+          $('header').css('background-color','transparent');
+      }
+  });
+});
 
 
 $(document).ready(function(){
@@ -183,9 +183,9 @@ $(document).ready(function(){
     $(this).next().scrollTop(0); //RETURN TO TOP OF PROJECT WHEN CLICKING on Project
     $('body').addClass('scroll-disable'); //FREEZE BODY SCROLLING WHILE PROJECT MODAL IS UP
 
-    $('body').on('touchmove', function(e){
-      if($('.scroll-disable').has($(e.target)).length) e.preventDefault();
-    });
+    // $('body').on('touchmove', function(e){
+    //   if($('.scroll-disable').has($(e.target)).length) e.preventDefault();
+    // });
 
   });
 
