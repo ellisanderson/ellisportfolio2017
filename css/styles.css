@@ -68,6 +68,9 @@ figcaption {
   font-size: .8rem;
   max-width: 500px; }
 
+.noscroll {
+  overflow: hidden; }
+
 @media (min-width: 767px) {
   h1 {
     font-weight: 100;

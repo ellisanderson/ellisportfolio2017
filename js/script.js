@@ -175,43 +175,35 @@ $(document).ready(function(){
 });
 
 
-//PROJECT MODAL POPUP (ALSO FREEZES SCROLLING WHEN PROJECT IS VISIBLE)
 $(document).ready(function(){
   $('.item').click(function(){
-    $(this).next().fadeIn();
+    $('.return').fadeIn(); // WHEN PROJECT MODAL APPEARS, BACK BUTTON APPEARS
+    $('.logo').fadeOut(); //HIDE LOGO WHEN PROJECT MODAL APPEARS
+    $(this).next().fadeIn(); //PROJECT MODAL POPUP
     $(this).next().scrollTop(0); //RETURN TO TOP OF PROJECT WHEN CLICKING on Project
-    $('body').css("overflow", "hidden");
+    $('body').addClass('noscroll'); //FREEZE BODY SCROLLING WHILE PROJECT MODAL IS UP
 
-    var fixed = document.querySelector('body');
-
-    fixed.addEventListener('touchmove', function(e) {
-
+    $('body').on('*', 'touchstart',function(e)
+    {
+        if ($(this) !== $('.project'))
+        {
             e.preventDefault();
-
-    }, false);
-
-    // document.ontouchmove = function (e) {
-    //   e.preventDefault();
-    // };
+            //and /or
+            return false;
+        }
+        //current event target is $altNav, handle accordingly
+    });
 
   });
-});
 
-
-//HIDE LOGO WHEN PROJECT MODAL APPEARS, APPEARS AGAIN WHEN RETURNING TO HOME SCREEN
-$(document).ready(function(){
-  $('.item').click(function(){
-    $('.return').fadeIn();
-    $('.logo').fadeOut();
-  });
-
-  $('.main-nav li a, .back, .return').click(function(){
-    $('.logo').fadeIn();
+  $('.main-nav li a, .return').click(function(){
+    $('.logo').fadeIn(); // APPEARS AGAIN WHEN RETURNING TO HOME SCREEN
+    $('body').removeClass('noscroll'); // ALLOW BODY SCROLLING AGAIN WHEN MODAL DISAPPEARS
   });
 
   $('.return').click(function(){
-    $(this).fadeOut();
-    $('.project').fadeOut();
-    $('body').css('overflow','scroll');
+    $(this).fadeOut(); // WHEN CLICKING BACK, BUTTON DISAPPEARS
+    $('.project').fadeOut(); // AND PROJECT MODAL DISAPPEARS TOO
   });
+
 });
