@@ -84,7 +84,8 @@ figcaption{
   max-width: 500px;
 }
 
-.noscroll{
+.scroll-disable{
+  position: static;
   overflow: hidden;
 }
 

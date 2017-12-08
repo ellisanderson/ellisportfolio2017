@@ -145,34 +145,34 @@ $(document).ready(function(){
 
 
 // BACK TO TOP BUTTON APPEAR ON SCROLL
-$(document).ready(function(){
-    var height = $(window).height();
-
-    $(window).scroll(function(){
-        if ($(this).scrollTop() >= height) {
-            $('.up').fadeIn(300);
-        } else {
-            $('.up').fadeOut(300);
-        }
-    });
-});
+// $(document).ready(function(){
+//     var height = $(window).height();
+//
+//     $(window).scroll(function(){
+//         if ($(this).scrollTop() >= height) {
+//             $('.up').fadeIn(300);
+//         } else {
+//             $('.up').fadeOut(300);
+//         }
+//     });
+// });
 
 
 
 
 
 // HEADER BACKGROUND-COLOR APPEAR ON SCROLL
-$(document).ready(function(){
-  var height = $(window).height();
-
-  $(window).scroll(function(){
-      if ($(this).scrollTop() >= height) {
-          $('header').css('background-color','black');
-      } else {
-          $('header').css('background-color','transparent');
-      }
-  });
-});
+// $(document).ready(function(){
+//   var height = $(window).height();
+//
+//   $(window).scroll(function(){
+//       if ($(this).scrollTop() >= height) {
+//           $('header').css('background-color','black');
+//       } else {
+//           $('header').css('background-color','transparent');
+//       }
+//   });
+// });
 
 
 $(document).ready(function(){
@@ -181,13 +181,17 @@ $(document).ready(function(){
     $('.logo').fadeOut(); //HIDE LOGO WHEN PROJECT MODAL APPEARS
     $(this).next().fadeIn(); //PROJECT MODAL POPUP
     $(this).next().scrollTop(0); //RETURN TO TOP OF PROJECT WHEN CLICKING on Project
-    $('body').addClass('noscroll'); //FREEZE BODY SCROLLING WHILE PROJECT MODAL IS UP
+    $('body').addClass('scroll-disable'); //FREEZE BODY SCROLLING WHILE PROJECT MODAL IS UP
+
+    $('body').on('touchmove', function(e){
+      if($('.scroll-disable').has($(e.target)).length) e.preventDefault();
+    });
 
   });
 
   $('.main-nav li a, .return').click(function(){
     $('.logo').fadeIn(); // APPEARS AGAIN WHEN RETURNING TO HOME SCREEN
-    $('body').removeClass('noscroll'); // ALLOW BODY SCROLLING AGAIN WHEN MODAL DISAPPEARS
+    $('body').removeClass('scroll-disable'); // ALLOW BODY SCROLLING AGAIN WHEN MODAL DISAPPEARS
   });
 
   $('.return').click(function(){
