@@ -8,10 +8,6 @@ body {
   font-family: 'Lato',sans-serif;
   letter-spacing: 1px; }
 
-section {
-  height: 100%;
-  overflow: auto; }
-
 h1 {
   text-transform: uppercase;
   margin: 0;
@@ -684,10 +680,11 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
   padding: 10vh 15px 0vh;
   background-color: white;
   z-index: 1;
-  overflow-y: scroll;
+  overflow: auto;
   -webkit-overflow-scrolling: touch; }
 
 .project-content {

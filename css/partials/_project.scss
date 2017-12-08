@@ -5,10 +5,12 @@
   position: fixed;
   top: 0;
   left: 0;
+  bottom:0;
   padding: 10vh 15px 0vh;
   background-color: white;
   z-index: 1;
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 
