@@ -95,6 +95,9 @@ $(document).ready(function(){
     }
   });
 
+
+
+
 });
 
 
@@ -110,8 +113,6 @@ $(document).ready(function(){
   });
 
   $('.main-nav li a').click(function(){
-    $('.project').hide();
-    $('.return').fadeOut();
     $('body').removeClass('scroll-disable');
   });
 });
@@ -156,7 +157,7 @@ $.fn.isVisible = function() {
     return ((elemBottom <= windowBottomView) && (elemTop >= windowScrollTopView));
 }
 
-//
+
 // $(document).ready(function() {
 //   var appear = "<div id='appear'></div>";
 //   // var disappear = "<div id='disappear'></div>";
@@ -183,42 +184,39 @@ $.fn.isVisible = function() {
 
 
 
-// HEADER BACKGROUND-COLOR APPEAR ON SCROLL
-// $(document).ready(function(){
-//   var height = $(window).height();
-//
-//   $(window).scroll(function(){
-//       if ($(this).scrollTop() >= height) {
-//           $('header').css('background-color','black');
-//       } else {
-//           $('header').css('background-color','transparent');
-//       }
-//   });
-// });
-
-
 $(document).ready(function(){
+
+  var returnArrow = '<div class="return"><div class="arrow"><div class="arrow-line"></div><div class="arrow-line"></div></div></div>';
+
+  $('.project').append(returnArrow);
+
   $('.item').click(function(){
-    // $(this).parent().parent().parent().siblings().not('header').hide(); //hide everything except 'header' or this section
-    // $(this).siblings().fadeOut(); // HIDE ALL SIBLINGS IN THE .project-grid, EXCEPT THE NEXT ONE WHICH WILL APPEAR USING THE NEXT LINE OF CODE
+    $('header').fadeOut();
+    $('section').not($(this).parent().parent().parent()).hide();//hide everything except 'header' or this section
+    $(this).siblings().fadeOut(); // HIDE ALL SIBLINGS IN THE .project-grid, EXCEPT THE NEXT ONE WHICH WILL APPEAR USING THE NEXT LINE OF CODE
     $(this).next().fadeIn(); //PROJECT MODAL POPUP
     $(this).next().scrollTop(0); //RETURN TO TOP OF PROJECT WHEN CLICKING on Project
-
-    $('.return').fadeIn(); // WHEN PROJECT MODAL APPEARS, BACK BUTTON APPEARS
-    $('.logo').fadeOut(); //HIDE LOGO WHEN PROJECT MODAL APPEARS
     $('body').addClass('scroll-disable'); //FREEZE BODY SCROLLING WHILE PROJECT MODAL IS UP
-
-
-  });
-
-  $('.main-nav li a, .return').click(function(){
-    $('.logo').fadeIn(); // APPEARS AGAIN WHEN RETURNING TO HOME SCREEN
-    $('body').removeClass('scroll-disable'); // ALLOW BODY SCROLLING AGAIN WHEN MODAL DISAPPEARS
   });
 
   $('.return').click(function(){
-    $(this).fadeOut(); // WHEN CLICKING BACK, BUTTON DISAPPEARS
-    $('.project').fadeOut(); // AND PROJECT MODAL DISAPPEARS TOO
+    $('header').fadeIn();
+    $('section').show();
+    $('.item').show();
+    $('body').removeClass('scroll-disable'); // ALLOW BODY SCROLLING AGAIN WHEN MODAL DISAPPEARS
+    $('.project').fadeOut();
+    $('html, body').animate({
+        scrollTop: $($(this).parent().prev()).offset().top
+    }, 0);
+  });
+
+  $(window).on('hashchange', function() {
+      // event.preventDefault();
+      $('header').fadeIn();
+      $('section').show();
+      $('.item').show();
+      $('body').removeClass('scroll-disable'); // ALLOW BODY SCROLLING AGAIN WHEN MODAL DISAPPEARS
+      $('.project').fadeOut();
   });
 
 });

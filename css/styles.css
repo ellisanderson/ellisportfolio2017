@@ -6,9 +6,7 @@ html, body {
 
 body {
   font-family: 'Lato',sans-serif;
-  letter-spacing: 1px; }
-
-section {
+  letter-spacing: 1px;
   position: relative; }
 
 h1 {
@@ -28,7 +26,7 @@ h1:hover {
 h2 {
   font-weight: 900;
   font-size: 1rem;
-  color: red;
+  color: #e6511a;
   text-transform: uppercase; }
 
 h3 {
@@ -53,12 +51,7 @@ p {
     color: red; }
 
 a {
-  text-decoration: none;
-  color: black;
-  transition: opacity .2s ease-in-out; }
-
-a:hover {
-  opacity: .5; }
+  text-decoration: none; }
 
 hr {
   margin: 100px 0; }
@@ -188,7 +181,8 @@ header {
   height: 100vh;
   display: none;
   position: fixed;
-  top: 0; }
+  top: 0;
+  z-index: 3; }
 
 .nav-close {
   position: absolute;
@@ -196,7 +190,8 @@ header {
   right: calc(50% - 15px);
   width: 30px;
   height: 30px;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: transform .3s ease; }
   .nav-close .close-line {
     position: absolute;
     left: 50%;
@@ -208,6 +203,9 @@ header {
   .nav-close .close-line:last-of-type {
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(135deg);
     transform: translateX(-50%) translateY(-50%) rotate(135deg); }
+
+.nav-close:hover {
+  transform: scale(1.2); }
 
 nav {
   width: 100%;
@@ -223,20 +221,23 @@ nav {
   line-height: 3rem;
   text-align: center; }
   .main-nav li {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    transition: transform .3s ease; }
     .main-nav li a {
       font-size: 1.5rem;
       font-weight: 300;
       transition: all 0.5s ease-in-out;
       color: white; }
+  .main-nav li:hover {
+    transform: scale(1.05); }
 
 .return {
   height: 50px;
-  width: 50px;
-  position: absolute;
-  top: 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
   left: 0;
-  display: none;
+  background-color: #e6511a;
   cursor: pointer; }
 
 .arrow {
@@ -248,20 +249,11 @@ nav {
   animation: backandforth 1s infinite ease-in-out; }
   .arrow .arrow-line {
     width: 15px;
-    border-top: 2px solid white;
+    border-top: 2px solid black;
+    transition: border-color .3s ease-in-out;
     transform: rotate(45deg) translate(8px); }
   .arrow .arrow-line:last-of-type {
     transform: rotate(135deg) translate(-8px); }
-
-.testbutton {
-  display: none;
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10; }
 
 @media (min-width: 767px) {
   .main-nav {
@@ -277,18 +269,13 @@ nav {
   .return {
     height: 100vh;
     width: 80px;
-    background-color: #eee;
     transition: background-color .3s ease-in-out; }
 
   .return:hover {
     background-color: black; }
 
   .return:hover .arrow .arrow-line {
-    border-top: 2px solid white; }
-
-  .arrow .arrow-line {
-    transition: border-color .3s ease-in-out;
-    border-top: 2px solid black; } }
+    border-top: 2px solid white; } }
 #welcome {
   background-color: #e6511a;
   height: 100vh; }
@@ -322,7 +309,7 @@ nav {
     stroke-width: 2;
     width: 150px;
     height: 150px;
-    animation: appear 3s;
+    animation: appear 3s, float 2s infinite ease-in-out;
     transition: all 0.5s ease-in-out; }
   .logo-image svg:hover {
     fill: black; }
@@ -344,7 +331,7 @@ nav {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 100px 0;
+  padding: 15px 0 80px;
   flex-direction: column;
   position: relative;
   overflow: hidden; }
@@ -483,6 +470,13 @@ nav {
     transform: translateX(-12px); }
   100% {
     transform: translateX(-17px); } }
+@keyframes float {
+  0% {
+    transform: translateY(-10px); }
+  50% {
+    transform: translateY(10px); }
+  100% {
+    transform: translateY(-10px); } }
 .line-background {
   width: 100%;
   height: 100vh;
@@ -698,7 +692,7 @@ nav {
   top: 0;
   left: 0;
   bottom: 0;
-  padding: 30px 15px 0;
+  padding: 15px;
   background-color: white;
   z-index: 1;
   overflow-y: scroll;

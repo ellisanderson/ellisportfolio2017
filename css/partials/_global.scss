@@ -9,11 +9,12 @@ html, body{
 body{
   font-family: 'Lato',sans-serif;
   letter-spacing: 1px;
-}
-
-section{
   position: relative;
 }
+
+// section{
+//   position: relative;
+// }
 
 h1{
   text-transform: uppercase;
@@ -34,7 +35,7 @@ h1:hover{
 h2{
   font-weight: 900;
   font-size: 1rem;
-  color: red;
+  color: $orange;
   text-transform: uppercase;
 }
 
@@ -67,12 +68,6 @@ p{
 
 a{
   text-decoration:none;
-  color: $linkcolor;
-  transition:opacity .2s ease-in-out;
-}
-
-a:hover{
-  opacity: .5;
 }
 
 hr{

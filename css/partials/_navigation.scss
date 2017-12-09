@@ -5,6 +5,7 @@
   display:none;
   position:fixed;
   top:0;
+  z-index: 3;
 }
 
 .nav-close{
@@ -14,6 +15,7 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+  transition: transform .3s ease;
 
   .close-line{
     position: absolute;
@@ -29,6 +31,10 @@
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(135deg);
     transform: translateX(-50%) translateY(-50%) rotate(135deg);
   }
+}
+
+.nav-close:hover{
+  transform: scale(1.2);
 }
 
 nav{
@@ -48,6 +54,7 @@ nav{
 
   li{
     text-transform:uppercase;
+    transition: transform .3s ease;
 
     a{
       font-size: 1.5rem;
@@ -56,15 +63,19 @@ nav{
       color: white;
     }
   }
+
+  li:hover{
+    transform: scale(1.05);
+  }
 }
 
 .return{
   height: 50px;
-  width: 50px;
-  position: absolute;
-  top: 0;
+  width: 100%;
+  position: fixed;
+  bottom:0;
   left: 0;
-  display: none;
+  background-color: $orange;
   cursor: pointer;
 }
 
@@ -78,7 +89,8 @@ nav{
 
   .arrow-line{
     width: 15px;
-    border-top: 2px solid white;
+    border-top: 2px solid black;
+    transition: border-color .3s ease-in-out;
     transform:rotate(45deg) translate(8px);
   }
 
@@ -87,17 +99,6 @@ nav{
   }
 }
 
-
-.testbutton{
-    display: none;
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    position:fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
 
 ////////////////////////////////////////////////////////////
 @media (min-width:767px) {
@@ -119,7 +120,6 @@ nav{
   .return{
     height: 100vh;
     width: 80px;
-    background-color: #eee;
     transition: background-color .3s ease-in-out;
   }
 
@@ -131,10 +131,4 @@ nav{
     border-top:2px solid white;
   }
 
-  .arrow{
-    .arrow-line{
-      transition: border-color .3s ease-in-out;
-      border-top:2px solid black;
-    }
-  }
 }

@@ -36,7 +36,7 @@
     stroke-width:2;
     width: 150px;
     height: 150px;
-    animation: appear 3s;
+    animation: appear 3s, float 2s infinite ease-in-out;
     transition: $all-fade;
   }
 
